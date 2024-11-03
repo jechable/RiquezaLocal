@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-green: #1B8A6B;
+  --secondary-green: #115E49;
+  --accent-green: #E7F6F2;
+  --light-green: #A7D7C5;
+  --text-dark: #0B3F31;
+  --text-light: #407165;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: linear-gradient(180deg, var(--accent-green) 0%, #FFFFFF 100%);
+  color: var(--text-dark);
+}
+
+#root {
+  width: 100%;
+}
+
+.leaf-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5C40 5 50 15 50 25C50 35 40 45 30 45C20 45 10 35 10 25C10 15 20 5 30 5Z' fill='%231B8A6B' fill-opacity='0.1'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+.custom-label {
+  word-wrap: break-word; /* Permite que el texto se rompa en palabras */
+}
