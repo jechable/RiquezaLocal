@@ -151,7 +151,7 @@ export default function ProducerDetail() {
                       <h3 className="text-xl font-bold text-primary">{product.name}</h3>
                     </div>
                     <div className="p-4 pt-1">
-                      <h3 className=" text-base font-semibold text-secondary">{product.descripcionP}</h3>
+                      <h3 className="text-text-light">{product.descripcionP}</h3>
                     </div>
                   </div>
                 ))}
