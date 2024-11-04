@@ -1,14 +1,28 @@
 import React, { useState } from 'react';
 import { X, ShoppingCart } from 'lucide-react';
+import { Pedidos } from '../Interfaces/PedidosInterfaces';
+import { Db,auth} from '../Firebase';
+import { collection, addDoc,deleteDoc,doc,getDocs,updateDoc  } from 'firebase/firestore';
+
 interface Product {
   name: string;
   image: string;
 }
-
 interface Producer {
   name: string;
+  mainImage: string;
   products: Product[];
 }
+
+const baseinformacion: Pedidos = {
+  id:'',
+  imagen:  '',
+  NombreProductor: '',
+  Producto: '',
+  Cantidad: '',
+  email: '',
+  phone: ''
+};
 
 interface PurchaseModalProps {
   isOpen: boolean;
@@ -18,24 +32,31 @@ interface PurchaseModalProps {
 
 export default function PurchaseModal({ isOpen, onClose, producer }: PurchaseModalProps) {
 
-  const [formData, setFormData] = useState({
-    product: '',
-    quantity: '',
-    email: '',
-    phone: ''
-  });
+  const [formData, setFormData] = useState<Pedidos>(baseinformacion);
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert('¡Gracias por tu pedido! El productor se pondrá en contacto contigo pronto.');
-    onClose();
+    formData.NombreProductor = producer.name;
+    formData.imagen = producer.mainImage;
+    try {
+      const productsCollection = collection(Db, 'Pedidos');
+      const docRef = await addDoc(productsCollection, formData);
+      const generatedId = docRef.id;
+      await updateDoc(docRef, { id: generatedId });
+      alert('¡Gracias por tu pedido! El productor se pondrá en contacto contigo pronto.');
+      onClose();
+    } catch (error) {
+      console.error('Error al agregar el producto:', error);
+      alert('Hubo un error al agregar su pedido');
+    }
   };
 
+
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-      <div className="bg-white rounded-2xl max-w-md w-full p-6">
+    <div className="font-commissioner fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
+      <div className="font-commissioner bg-white rounded-2xl max-w-md w-full p-6">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-xl font-semibold text-secondary">
             Realizar Pedido - {producer.name}
@@ -56,8 +77,8 @@ export default function PurchaseModal({ isOpen, onClose, producer }: PurchaseMod
             <select
               required
               className="w-full rounded-lg border-gray-300 shadow-sm focus:border-primary focus:ring-primary"
-              value={formData.product}
-              onChange={(e) => setFormData({ ...formData, product: e.target.value })}
+              value={formData.Producto}
+              onChange={(e) => setFormData({ ...formData, Producto: e.target.value })}
             >
               <option value="">Selecciona un producto</option>
               {producer.products.map((product, index) => (
@@ -77,8 +98,8 @@ export default function PurchaseModal({ isOpen, onClose, producer }: PurchaseMod
               required
               min="1"
               className="w-full rounded-lg border-gray-300 shadow-sm focus:border-primary focus:ring-primary"
-              value={formData.quantity}
-              onChange={(e) => setFormData({ ...formData, quantity: e.target.value })}
+              value={formData.Cantidad}
+              onChange={(e) => setFormData({ ...formData, Cantidad: e.target.value })}
             />
           </div>
 

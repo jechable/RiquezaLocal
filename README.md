@@ -1,2 +1,2 @@
-# riquesa-local-y-dise-o-mas-verde-con-carrusel-roto
+# Intrucciones y aclaraciones
 generar descripcion del proyecto

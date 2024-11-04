@@ -1,26 +1,23 @@
+import { Link } from 'react-router-dom';
+import { MapPin, Phone } from 'lucide-react';
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Plus, Edit2, Trash2,Edit } from 'lucide-react';
-import { useAuth } from '../context/AuthContext';
 import { Db,auth} from '../Firebase';
-//Se cambio el de firebase
-import { collection, getDocs,deleteDoc,doc ,updateDoc} from 'firebase/firestore';
-import { Productores } from '../Interfaces/Interfaces';
+import { collection, getDocs,deleteDoc,doc } from 'firebase/firestore';
+import { Pedidos } from '../Interfaces/PedidosInterfaces';
+import { Trash2 , ArrowBigLeft} from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
+export default function Producers() {
 
-export default function AdminDashboard() {
-
-  const Identificador = useState("");
-  const [Productoress, setProductores] = useState<Productores[]>([]);
+  const [Pedidoss, setProductores] = useState<Pedidos[]>([]);
   const [error, setError] = useState<string | null>(null);
-
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const productsCollection = collection(Db, 'Productores');
+        const productsCollection = collection(Db, 'Pedidos');
         const productSnapshot = await getDocs(productsCollection);
-        const productList: Productores[] = productSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as Productores));
+        const productList: Pedidos[] = productSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as Pedidos));
         setProductores(productList);
       } catch (error) {
         setError((error as Error).message);
@@ -30,48 +27,28 @@ export default function AdminDashboard() {
     fetchProducts();
   }, []);
 
-  const { logout } = useAuth();
+  
   const navigate = useNavigate();
 
-  const handleLogout = () => {
-    logout();
-    navigate('/adminlogin');
-  };
-
-  
-
   const handleDelete =  async (id: string) => {
-    if (window.confirm('¿Está seguro de eliminar este productor?')) {
-    const productDoc = doc(Db, 'Productores', id);
+    if (window.confirm('¿Está seguro de eliminar este pedido?')) {
+    const productDoc = doc(Db, 'Pedidos', id);
     await deleteDoc(productDoc); 
-    setProductores(Productoress.filter(product => product.id !== id));
+    setProductores(Pedidoss.filter(product => product.id !== id));
     }
   };
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
       <div className="flex justify-between items-center mb-8">
-        <h1 className="font-mit font-bold text-2xl font-bold text-green-800">Panel Administrativo</h1>
+        <h1 className="font-mit font-bold text-2xl font-bold text-green-800">Panel Pedidos</h1>
         <div className="space-x-4">
-        <button
-            onClick={() => navigate('/adminPedidos')}
+          <button
+            onClick={() => navigate('/admindashboard')}
             className=" font-commissioner font-semibold inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700"
           >
-            <Edit className="h-5 w-5 mr-2" />
-             Pedidos
-          </button>
-          <button
-            onClick={() => navigate('/admin/producer/new')}
-            className=" font-commissioner font-semibold inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700"
-          >
-            <Plus className="h-5 w-5 mr-2" />
-            Nuevo Productor
-          </button>
-          <button
-            onClick={handleLogout}
-            className="font-commissioner justify-center text-center items-center px-4 py-2 text-gray-600 hover:text-gray-800"
-          >
-            Cerrar Sesión
+            <ArrowBigLeft className="h-5 w-5 mr-2" />
+            Volver al Dashboard
           </button>
         </div>
       </div>
@@ -84,42 +61,54 @@ export default function AdminDashboard() {
                 Productor
               </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Ubicación
+                Producto
               </th>
               <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                Acciones
+                Cantidad
+              </th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Email
+              </th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Telefono
+              </th>
+              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                
               </th>
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
-            {Productoress.map((producer) => (
+            {Pedidoss.map((producer) => (
               <tr key={producer.id}>
                 <td className="px-6 py-4 whitespace-nowrap">
                   <div className="flex items-center">
                     <div className="h-10 w-10 flex-shrink-0">
-                      <img
+                    <img
                         className="h-10 w-10 rounded-full object-cover"
-                        src={producer.mainImage}
-                        alt={producer.name}
+                        src={producer.imagen}
+                        alt={producer.NombreProductor}
                       />
                     </div>
                     <div className="ml-4">
                       <div className="font-commissioner font-semibold text-sm font-medium text-gray-900">
-                        {producer.name}
+                        {producer.NombreProductor}
                       </div>
                     </div>
                   </div>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap">
-                  <div className="text-sm text-gray-900">{producer.location}</div>
+                  <div className="text-sm text-gray-900">{producer.Producto}</div>
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap">
+                  <div className="text-sm text-gray-900">{producer.Cantidad}</div>
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap">
+                  <div className="text-sm text-gray-900">{producer.email}</div>
+                </td>
+                <td className="px-6 py-4 whitespace-nowrap">
+                  <div className="text-sm text-gray-900">{producer.phone}</div>
                 </td>
                 <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
-                  <button
-                    onClick={() => navigate(`/admin/producer/edit/${producer.id}`)}
-                    className="text-green-600 hover:text-green-900 mr-4"
-                  >
-                    <Edit2 className="h-5 w-5" />
-                  </button>
                   <button
                     onClick={() => handleDelete(producer.id)}
                     className="text-red-600 hover:text-red-900"

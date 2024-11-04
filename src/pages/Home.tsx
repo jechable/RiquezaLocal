@@ -51,17 +51,17 @@ export default function Home() {
         <BackgroundCarousel />
         <div className="relative z-10 h-full flex items-center">
           <div className="max-w-7xl mx-auto px-4 text-center">
-            <h1 className="text-7xl md:text-8xl font-bold font-montserrat mb-6 text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
+            <h1 className="text-7xl md:text-6lg font-bold font-montserrat mb-6 text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
               Riqueza Local 
             </h1>
-            <p className="text-xl font-Thin font-commissioner md:text-2xl mb-8 text-gray-200">
+            <p className="text-xl font-Thin font-commissioner md:text-xl mb-8 text-gray-200">
               <h1 className='drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]'>Conectando productores locales con consumidores conscientes</h1>
             </p>
             <Link
               to="/producers"
               className="inline-flex items-center bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-secondary transition-colors transition-transform transform hover:scale-105"
             >
-              <h1 className='font-montserrat text-xl drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]'>Ver Productores</h1>
+              <h1 className='font-montserrat text-ls drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]'>Ver Productores</h1>
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </div>

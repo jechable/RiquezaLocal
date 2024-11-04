@@ -27,7 +27,7 @@ export default function AdminLogin() {
   };
 
   return (
-    <div className="flex items-center justify-center bg-accent py-40 px-4 sm:px-6 lg:px-8">
+    <div className="flex items-center justify-center bg-accent py-36 px-4 sm:px-6 lg:px-8">
       <div className="max-w-md w-full space-y-8">
         <div>
           <div className="mx-auto h-12 w-12 flex items-center justify-center rounded-full bg-primary">

@@ -20,7 +20,7 @@
 }
 
 body {
-  margin: 0;
+  
   min-width: 320px;
   min-height: 100vh;
   background: linear-gradient(180deg, var(--accent-green) 0%, #FFFFFF 100%);
