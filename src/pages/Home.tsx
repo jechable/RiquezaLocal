@@ -51,17 +51,17 @@ export default function Home() {
         <BackgroundCarousel />
         <div className="relative z-10 h-full flex items-center">
           <div className="max-w-7xl mx-auto px-4 text-center">
-            <h1 className="text-6xl md:text-7xl font-bold mb-6 text-white">
-              Riqueza Local
+            <h1 className="text-7xl md:text-8xl font-bold font-montserrat mb-6 text-white drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">
+              Riqueza Local 
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-gray-200">
-              Conectando productores locales con consumidores conscientes
+            <p className="text-xl font-Thin font-commissioner md:text-2xl mb-8 text-gray-200">
+              <h1 className='drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]'>Conectando productores locales con consumidores conscientes</h1>
             </p>
             <Link
               to="/producers"
-              className="inline-flex items-center bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-secondary transition-colors"
+              className="inline-flex items-center bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-secondary transition-colors transition-transform transform hover:scale-105"
             >
-              Ver Productores
+              <h1 className='font-montserrat text-xl drop-shadow-[0_2px_2px_rgba(0,0,0,0.5)]'>Ver Productores</h1>
               <ArrowRight className="ml-2 h-5 w-5" />
             </Link>
           </div>
@@ -75,13 +75,13 @@ export default function Home() {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className="bg-white p-8 rounded-2xl shadow-soft hover:shadow-lg transition-shadow"
+                className="bg-white p-8 rounded-2xl shadow-soft hover:shadow-xl transition-shadow"
               >
                 <div className="inline-flex items-center justify-center w-12 h-12 bg-accent text-primary rounded-full mb-4">
                   {feature.icon}
                 </div>
-                <h3 className="text-xl font-semibold mb-2 text-secondary">{feature.title}</h3>
-                <p className="text-text-light">{feature.description}</p>
+                <h3 className="font-montserrat text-xl font-semibold mb-2 text-secondary">{feature.title}</h3>
+                <p className="font-commissioner text-text-light">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -91,19 +91,19 @@ export default function Home() {
       {/* Producer Showcase */}
       <section className="py-16 bg-accent">
         <div className="max-w-7xl mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-8 text-secondary">
-            Nuestros Productores:
+          <h2 className="font-montserrat text-4xl font-extrabold text-center mb-10 text-secondary">
+            Productores
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 ">
           {Productoress.map((productor) => (
-              <div className="relative rounded-2xl overflow-hidden shadow-soft">
+              <div className="relative rounded-2xl overflow-hidden shadow-soft transition-transform transform hover:scale-105">
               <img
                 src={productor.products[0].image}
                 alt="Productor 2"
                 className="w-full h-64 object-cover"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
-                <h3 className="text-white font-semibold text-xl">{productor.name}</h3>
+                <h3 className="font-commissioner text-white font-semibold text-2xl">{productor.name}</h3>
               </div>
             </div>
             ))}

@@ -117,13 +117,13 @@ export default function ProducerForm() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
+    <div className="font-commissioner max-w-4xl mx-auto px-4 py-8">
       <h1 className="text-2xl font-bold text-secondary mb-8">
       </h1>
 
       <form onSubmit={handleSubmit} className="space-y-8">
         <div className="bg-white rounded-2xl shadow-soft p-6 space-y-6">
-          <h2 className="text-xl font-semibold text-secondary">Información Básica</h2>
+          <h2 className="font-commissioner text-xl font-semibold text-secondary">Información Básica</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>

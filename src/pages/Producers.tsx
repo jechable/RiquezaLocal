@@ -29,7 +29,7 @@ export default function Producers() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-16">
-      <h1 className="text-3xl font-bold text-secondary mb-8">
+      <h1 className="font-mitr text-3xl font-semibold text-secondary mb-10">
         Nuestros Productores
       </h1>
 
@@ -49,15 +49,15 @@ export default function Producers() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
             </div>
             <div className="p-6">
-              <h2 className="text-xl font-semibold text-secondary mb-2">{productor.name}</h2>
-              <p className="text-text-light mb-4 line-clamp-4">{productor.descripcion}</p>
+              <h2 className="font-mit text-xl font-bold text-secondary mb-2">{productor.name}</h2>
+              <p className="font-commissioner text-text-light mb-4 line-clamp-4">{productor.descripcion}</p>
               <div className="flex items-center text-text-light space-x-4">
-                <div className="flex items-center">
-                  <MapPin className="h-4 w-4 text-primary mr-1" />
+                <div className="font-commissioner font-semibold flex items-center">
+                  <MapPin className="font-extrabold h-4 w-4 text-primary mr-1" />
                   <span>{productor.location}</span>
                 </div>
-                <div className="flex items-center">
-                  <Phone className="h-4 w-4 text-primary mr-1" />
+                <div className="font-commissioner font-semibold flex items-center">
+                  <Phone className="font-extrabold h-4 w-4 text-primary mr-1" />
                   <span>{productor.phone}</span>
                 </div>
               </div>

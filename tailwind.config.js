@@ -3,6 +3,15 @@ export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
+      fontFamily: {
+        'sans': ['Inter', 'system-ui', 'Avenir', 'Helvetica', 'Arial', 'sans-serif'], 
+        'custom': ['MyCustomFont', 'sans-serif'], 
+        'odor': ['Odor Mean Chey', 'sans-serif'],
+        'roboto': ['Roboto', 'sans-serif'],
+        'commissioner': ['Commissioner', 'sans-serif'],
+        'montserrat': ['Montserrat Alternates', 'sans-serif'],
+        'mitr': ['Mitr', 'sans-serif'],
+      },
       colors: {
         'primary': '#1B8A6B',
         'secondary': '#115E49',
@@ -10,6 +19,7 @@ export default {
         'light-green': '#A7D7C5',
         'text-dark': '#0B3F31',
         'text-light': '#407165',
+        'custom-color': '#357D5F'
       },
       borderRadius: {
         'xl': '1rem',

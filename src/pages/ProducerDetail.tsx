@@ -74,7 +74,7 @@ export default function ProducerDetail() {
   return (
     <div className="bg-accent min-h-screen pb-16">
       {/* Hero Section */}
-      <div className="relative h-96">
+      <div className=" relative h-96">
         <img
           src={Productoress.mainImage}
           alt={Productoress.name}
@@ -83,18 +83,18 @@ export default function ProducerDetail() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 p-8">
           <div className="max-w-7xl mx-auto">
-            <h1 className="text-4xl font-bold text-white mb-4">{Productoress.name}</h1>
+            <h1 className="font-mit text-4xl font-bold text-white mb-4">{Productoress.name}</h1>
             <div className="flex items-center space-x-4 text-white">
 
               
-              <div className="flex items-center">
-                <MapPin className="h-5 w-5 mr-2" />
+              <div className="font-commissioner font-semibold flex items-center">
+                <MapPin className=" h-5 w-5 mr-2" />
                 <button onClick={obtenerDirecion}>
                 {Productoress.location}
                 </button>
               </div>
 
-              <div className=" flex items-center">
+              <div className="font-commissioner font-semibold flex items-center">
                 <Phone className="ml-6 h-5 w-5 mr-2" />
                 <button onClick={WhatsAppLink}>
                 {Productoress.phone}
@@ -113,22 +113,22 @@ export default function ProducerDetail() {
             {/* About Section */}
             <div className="bg-white rounded-2xl shadow-soft p-8">
               <div>
-                <h3 className="font-semibold text-secondary mb-2">Descripcion</h3>
+                <h3 className="font-mit text-lg font-bold text-secondary mb-2">Descripcion</h3>
                 <p className="text-text-light mb-4">{Productoress.descripcion}</p>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                 <div>
-                  <h3 className="font-semibold text-secondary mb-2">Misión</h3>
+                  <h3 className="font-mit text-lg font-bold text-secondary mb-2">Misión</h3>
                   <p className="text-text-light">{Productoress.mission}</p>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-secondary mb-2">Visión</h3>
+                  <h3 className="font-mit text-lg font-bold text-secondary mb-2">Visión</h3>
                   <p className="text-text-light">{Productoress.vision}</p>
                 </div>
               </div>
 
               <div className="border-t border-gray-100 pt-6">
-                <h3 className="font-semibold text-secondary mb-4 flex items-center">
+                <h3 className="font-mit text-lg font-bold text-secondary mb-4 flex items-center">
                   <History className="h-5 w-5 mr-2 text-primary" />
                   Reseña Histórica
                 </h3>
@@ -138,7 +138,7 @@ export default function ProducerDetail() {
 
             {/* Products Section */}
             <div className="bg-white rounded-2xl shadow-soft p-8">
-              <h2 className="text-2xl font-bold text-primary mb-6">Nuestros Productos</h2>
+              <h2 className="font-mit font-bold text-2xl font-bold text-primary mb-6">Nuestros Productos</h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {Productoress.products.map((product, index) => (
                   <div key={index} className="rounded-xl overflow-hidden shadow-soft">
@@ -148,10 +148,10 @@ export default function ProducerDetail() {
                       className="w-full h-48 object-cover"
                     />
                     <div className="p-4 pb-2">
-                      <h3 className="text-xl font-bold text-primary">{product.name}</h3>
+                      <h3 className="font-mit text-xl font-bold text-primary">{product.name}</h3>
                     </div>
                     <div className="p-4 pt-1">
-                      <h3 className="text-text-light">{product.descripcionP}</h3>
+                      <h3 className="font-commissioner text-text-light text-text-light">{product.descripcionP}</h3>
                     </div>
                   </div>
                 ))}
@@ -165,14 +165,14 @@ export default function ProducerDetail() {
             <div className="bg-white rounded-2xl shadow-soft p-6">
               <button
                 onClick={() => setIsPurchaseModalOpen(true)}
-                className="w-full bg-primary text-white px-6 py-3 rounded-full hover:bg-secondary transition-colors mb-6"
+                className="font-mit font-bold text-lg w-full bg-primary text-white px-6 py-3 rounded-full hover:bg-secondary transition-colors mb-6"
               >
                 Comprar Productos
               </button>
 
               <div className="space-y-4">
                 <div>
-                  <h3 className="font-semibold text-secondary mb-2 flex items-center">
+                  <h3 className="font-mit font-bold text-secondary mb-2 flex items-center">
                     <Clock className="h-5 w-5 mr-2 text-primary" />
                     Horario
                   </h3>
@@ -180,23 +180,23 @@ export default function ProducerDetail() {
                 </div>
 
                 <div>
-                  <h3 className="font-semibold text-secondary mb-2 flex items-center">
+                  <h3 className="font-mit  font-bold text-secondary mb-2 flex items-center">
                     <Building2 className="h-5 w-5 mr-2 text-primary" />
                     Información
                   </h3>
                   <div className="space-y-2 text-text-light">
-                    <p>Representante: {Productoress.legalRep}</p>
-                    <p>Tipo: {Productoress.type}</p>
-                    <p>Organización: {Productoress.organization}</p>
+                    <p><strong>Representante:</strong> {Productoress.legalRep}</p>
+                    <p><strong>Tipo:</strong> {Productoress.type}</p>
+                    <p><strong>Organización:</strong> {Productoress.organization}</p>
                   </div>
                 </div>
 
                 <div>
-                  <h3 className="font-semibold text-secondary mb-2">Redes Sociales</h3>
+                  <h3 className="mt-6 font-mit  font-bold text-secondary mb-2">Redes Sociales</h3>
                   <div className="flex space-x-4">
                     {Productoress.social.instagram != "" && (
                       <a
-                        href={`https://instagram.com${Productoress.social.instagram}`}
+                        href={`https://instagram.com/${Productoress.social.instagram}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-primary hover:text-secondary transition-colors"
@@ -205,7 +205,7 @@ export default function ProducerDetail() {
                       </a>)}
                     {Productoress.social.facebook != "" && (
                       <a
-                        href={`https://facebook.com${Productoress.social.facebook}`}
+                        href={`https://facebook.com/${Productoress.social.facebook}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-primary hover:text-secondary transition-colors"
