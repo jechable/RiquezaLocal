@@ -20,7 +20,7 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">Contacto</h3>
             <ul className="space-y-2 text-gray-300">
-              <li>Email: contacto@riquezeloca.com</li>
+              <li>Email: yo</li>
               <li>Teléfono: +506 2222-1111</li>
               <li>San José, Costa Rica</li>
             </ul>
