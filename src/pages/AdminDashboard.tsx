@@ -55,14 +55,14 @@ export default function AdminDashboard() {
         <div className="space-x-4">
         <button
             onClick={() => navigate('/adminPedidos')}
-            className=" font-commissioner font-semibold inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700"
+            className="ml-4 font-commissioner font-semibold inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700"
           >
             <Edit className="h-5 w-5 mr-2" />
              Pedidos
           </button>
           <button
             onClick={() => navigate('/admin/producer/new')}
-            className=" font-commissioner font-semibold inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700"
+            className="mt-2 font-commissioner font-semibold inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700"
           >
             <Plus className="h-5 w-5 mr-2" />
             Nuevo Productor
