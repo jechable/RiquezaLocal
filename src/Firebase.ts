@@ -9,13 +9,13 @@ import { getAuth } from 'firebase/auth';
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 console.log(import.meta.env);
 const firebaseConfig = {
-  apiKey: "AIzaSyBfwGrVidbSpRWMKij4p11GLrVaNBRdmHY",
-  authDomain: "riquezalocal-cade9.firebaseapp.com",
-  projectId: "riquezalocal-cade9",
-  storageBucket: "riquezalocal-cade9.firebasestorage.app",
-  messagingSenderId: "985115637521",
-  appId: "1:985115637521:web:dee79d224c54b98ecbbeb0",
-  measurementId: "G-V4XQVSE1WR"
+  apiKey: import.meta.env.VITE_API,
+  authDomain: import.meta.env.VITE_A,
+  projectId: import.meta.env.VITE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_APP_ID,
+  measurementId: import.meta.env.VITE_MEASUREMENT_ID
 };
 
 // Initialize Firebase

@@ -52,7 +52,7 @@ export default function Home() {
         <div className="relative z-10 h-full flex items-center">
           <div className="max-w-7xl mx-auto px-4 text-center">
             <h1 className="text-6xl md:text-7xl font-bold mb-6 text-white">
-              Riqueza Loca
+              Riqueza Local
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-gray-200">
               Conectando productores locales con consumidores conscientes
