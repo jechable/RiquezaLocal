@@ -42,7 +42,7 @@ export default function AdminDashboard() {
 
   const handleDelete =  async (id: string) => {
     if (window.confirm('¿Está seguro de eliminar este productor?')) {
-    const productDoc = doc(Db, 'productos', id);
+    const productDoc = doc(Db, 'Productores', id);
     await deleteDoc(productDoc); 
     setProductores(Productoress.filter(product => product.id !== id));
     }
@@ -51,18 +51,18 @@ export default function AdminDashboard() {
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
       <div className="flex justify-between items-center mb-8">
-        <h1 className="text-2xl font-bold text-green-800">Panel Administrativo</h1>
+        <h1 className="font-mit font-bold text-2xl font-bold text-green-800">Panel Administrativo</h1>
         <div className="space-x-4">
           <button
             onClick={() => navigate('/admin/producer/new')}
-            className="inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700"
+            className=" font-commissioner font-semibold inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700"
           >
             <Plus className="h-5 w-5 mr-2" />
             Nuevo Productor
           </button>
           <button
             onClick={handleLogout}
-            className="px-4 py-2 text-gray-600 hover:text-gray-800"
+            className="font-commissioner justify-center text-center items-center px-4 py-2 text-gray-600 hover:text-gray-800"
           >
             Cerrar Sesión
           </button>
@@ -97,7 +97,7 @@ export default function AdminDashboard() {
                       />
                     </div>
                     <div className="ml-4">
-                      <div className="text-sm font-medium text-gray-900">
+                      <div className="font-commissioner font-semibold text-sm font-medium text-gray-900">
                         {producer.name}
                       </div>
                     </div>
