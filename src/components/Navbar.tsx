@@ -43,7 +43,7 @@ export default function Navbar() {
           <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md hover:text-green-200"
+              className="inline-flex items-center justify-center p-2 rounded-md transition-transform transform hover:scale-105"
             >
               <Menu className="h-6 w-6" />
             </button>
