@@ -1,4 +1,9 @@
 # Riqueza Local
+Para iniciar el aplicativo desde visual usa estos comandos 
+Recuerda tener instalado Node.js y activar los premisos de escritura desde el powershell
+1. npm install //Para installar librerias
+2. npm run dev //Para iniciar el local host de vite
+
 
 Descripción
 Riqueza Local es una aplicación web diseñada para conectar productores locales con consumidores conscientes. La plataforma permite a los usuarios explorar productos orgánicos, conocer a los productores y realizar pedidos directamente. Además, ofrece a los administradores herramientas para gestionar productores y pedidos de manera eficiente.
@@ -36,6 +41,7 @@ Las contribuciones son bienvenidas. Si deseas contribuir, por favor sigue estos 
 Realiza tus cambios y haz un commit (git commit -m 'Agregada nueva característica').
 Envía tus cambios (git push origin feature/nueva-caracteristica).
 Abre un Pull Request.
+
 Contacto
 Para más información, puedes contactar a:
 Email: davida.rinconc@gmail.com

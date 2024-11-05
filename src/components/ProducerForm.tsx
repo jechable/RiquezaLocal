@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Trash2, Plus } from 'lucide-react';
-import { useProducers } from '../context/ProducerContext';
 import { Db,auth} from '../Firebase';
 import { collection, addDoc,deleteDoc,doc,getDocs,updateDoc  } from 'firebase/firestore';
 import { Productores } from '../Interfaces/Interfaces';

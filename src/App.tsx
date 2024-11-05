@@ -9,13 +9,11 @@ import AdminDashboard from './pages/AdminDashboard';
 import ProducerForm from './components/ProducerForm';
 import Pedidos from "./pages/AdminPedidos"
 import { AuthProvider } from './context/AuthContext';
-import { ProducersProvider } from './context/ProducerContext';
 
 
 export function App() {
   return (
     <AuthProvider>
-      <ProducersProvider>
     <BrowserRouter>
       <div className="flex flex-col min-h-screen">
       <Navbar />
@@ -34,7 +32,6 @@ export function App() {
         <Footer />
       </div>
     </BrowserRouter>
-    </ProducersProvider>
     </AuthProvider>
   );
 }
