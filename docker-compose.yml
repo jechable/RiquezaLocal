@@ -1,0 +1,9 @@
+version: "3"
+services:
+  riquezalocal:
+    build: .
+    ports:
+      - "8081:80"              # Expose on host port 8081
+    restart: unless-stopped
+    env_file:
+      - .env                   # Uses .env for build-time vars (Vite picks up REACT_APP_*, VITE_* automatically)
